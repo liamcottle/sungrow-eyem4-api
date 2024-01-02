@@ -15,6 +15,7 @@ class Client extends EventEmitter {
         this.ip = ip;
         this.lang = "en_us";
         this.token = "";
+        this.serviceCallResponseTimeout = 10000; // milliseconds to wait for a response to a service call before timing out
         this.websocket = null;
         this.serviceCallbacks = {};
     }
@@ -72,8 +73,19 @@ class Client extends EventEmitter {
         return new Promise((resolve, reject) => {
             try {
 
+                // reject after provided timeout
+                var rejectTimeout = null;
+                if(this.serviceCallResponseTimeout != null){
+                    rejectTimeout = setTimeout(() => {
+                        reject("timeout");
+                    }, this.serviceCallResponseTimeout);
+                }
+
                 // set callback so we can resolve the promise later
                 this.serviceCallbacks[serviceName] = (response) => {
+
+                    // clear reject timeout
+                    clearTimeout(rejectTimeout);
 
                     // make sure result code successful
                     const resultCode = response.result_code;
