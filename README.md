@@ -18,9 +18,9 @@ npm install @liamcottle/sungrow-eyem4-api
 - [x] `getStatistics`
 - [x] `getFaults`
 - [x] `getSystemInformation`
-- [x] `getDeviceList`
-- [x] `getDeviceRealtimeData`
-- [x] `getDeviceDCData`
+- [x] `getDeviceList(deviceType)`
+- [x] `getDeviceRealtimeData(deviceId)`
+- [x] `getDeviceDCData(deviceId)`
 
 ## Example
 
