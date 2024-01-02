@@ -1,6 +1,6 @@
 {
   "name": "@liamcottle/sungrow-eyem4-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a NodeJS library for interacting with the websocket server running on the Sungrow EyeM4 Dongle.",
   "main": "src/index.js",
   "scripts": {
