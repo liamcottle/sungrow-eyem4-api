@@ -1,6 +1,8 @@
 # Sungrow-EyeM4-API
 
 [![npm](https://img.shields.io/npm/v/%40liamcottle%2Fsungrow-eyem4-api)](https://www.npmjs.com/package/@liamcottle/sungrow-eyem4-api)
+![GitHub License](https://img.shields.io/github/license/liamcottle/sungrow-eyem4-api)
+
 
 This is a NodeJS library for interacting with the websocket server running on the [Sungrow EyeM4 Dongle](https://en.sungrowpower.com/productDetail/1008/intelligent-gateway-eyem4).
 
