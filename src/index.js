@@ -100,6 +100,16 @@ class Client extends EventEmitter {
         });
     }
 
+    async getAbout() {
+        const response = await axios.get(`http://${this.ip}/about/list`);
+        return response.data.result_data;
+    }
+
+    async getProduct() {
+        const response = await axios.get(`http://${this.ip}/product/list`);
+        return response.data.result_data;
+    }
+
     async getDeviceInfo(deviceId) {
 
         // fetch device info
