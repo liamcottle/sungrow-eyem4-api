@@ -6,7 +6,7 @@ class Client extends EventEmitter {
     constructor(ip) {
         super();
         this.ip = ip;
-        this.token = null;
+        this.token = "";
         this.websocket = null;
         this.serviceCallbacks = {};
     }
@@ -100,7 +100,7 @@ class Client extends EventEmitter {
         });
 
         // update token from response
-        this.token = response?.result_data?.token;
+        this.token = response?.token;
 
         return true;
 
