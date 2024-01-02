@@ -24,9 +24,33 @@ const Client = require("@liamcottle/sungrow-eyem4-api");
         // authenticate
         await client.authenticate();
 
+        // log state
+        const state = await client.getState();
+        console.log(state);
+
+        // log runtime
+        const runtime = await client.getRuntime();
+        console.log(runtime);
+
+        // log statistics
+        const statistics = await client.getStatistics();
+        console.log(statistics);
+
+        // log faults
+        const faults = await client.getFaults();
+        console.log(faults);
+
         // log system information
         const systemInformation = await client.getSystemInformation();
         console.log(systemInformation);
+
+        // log realtime data for each device
+        const deviceList = await client.getDeviceList();
+        console.log(deviceList);
+        for(const device of deviceList.list){
+            const realtimeDataResponse = await client.getRealtimeData(device.dev_id);
+            console.log(realtimeDataResponse);
+        }
 
         // we are done here
         client.disconnect();
