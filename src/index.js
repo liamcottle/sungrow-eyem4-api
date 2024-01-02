@@ -139,6 +139,13 @@ class Client extends EventEmitter {
         });
     }
 
+    async getDeviceDCData(deviceId) {
+        return this.callService("direct", {
+            token: this.token,
+            dev_id: deviceId,
+        });
+    }
+
     async getFaults() {
         return this.callService("fault", {
             token: this.token,
