@@ -1,3 +1,4 @@
+const axios  = require('axios');
 const WebSocket  = require('ws');
 const EventEmitter = require('events');
 
@@ -12,6 +13,7 @@ class Client extends EventEmitter {
     constructor(ip) {
         super();
         this.ip = ip;
+        this.lang = "en_us";
         this.token = "";
         this.websocket = null;
         this.serviceCallbacks = {};
@@ -87,7 +89,7 @@ class Client extends EventEmitter {
 
                 // send service request
                 this.websocket.send(JSON.stringify({
-                    lang: "en_us",
+                    lang: this.lang,
                     service: serviceName,
                     ...data,
                 }));
@@ -96,6 +98,35 @@ class Client extends EventEmitter {
                 reject(e);
             }
         });
+    }
+
+    async getDeviceInfo(deviceId) {
+
+        // fetch device info
+        const response = await axios.get(`http://${this.ip}/device/getInfo`, {
+            params: {
+                "dev_id": deviceId,
+                "token": this.token,
+                "lang": this.lang,
+            },
+        });
+
+        return response.data.result_data;
+
+    }
+
+    async getDeviceTypes() {
+
+        // fetch device types
+        const response = await axios.get(`http://${this.ip}/device/getType`, {
+            params: {
+                "token": this.token,
+                "lang": this.lang,
+            },
+        });
+
+        return response.data.result_data;
+
     }
 
     async authenticate() {
