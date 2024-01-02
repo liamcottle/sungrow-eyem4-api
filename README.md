@@ -76,3 +76,8 @@ const Client = require("@liamcottle/sungrow-eyem4-api");
 
 })();
 ```
+
+## References
+
+- https://en.sungrowpower.com/productDetail/1008/intelligent-gateway-eyem4
+- https://service.sungrowpower.com.au/files/Web_Files/FAQ/TD_202006_EyeM4%20-WiFi-_Quick%20Guide%20for%20SG30-50-110CX%20Inverters_V1.1.pdf
