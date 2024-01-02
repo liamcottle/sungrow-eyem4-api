@@ -48,7 +48,7 @@ const Client = require("@liamcottle/sungrow-eyem4-api");
         const deviceList = await client.getDeviceList();
         console.log(deviceList);
         for(const device of deviceList.list){
-            const realtimeDataResponse = await client.getRealtimeData(device.dev_id);
+            const realtimeDataResponse = await client.getDeviceRealtimeData(device.dev_id);
             console.log(realtimeDataResponse);
         }
 

@@ -132,7 +132,7 @@ class Client extends EventEmitter {
         });
     }
 
-    async getRealtimeData(deviceId) {
+    async getDeviceRealtimeData(deviceId) {
         return this.callService("real", {
             token: this.token,
             dev_id: deviceId,
