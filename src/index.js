@@ -3,6 +3,12 @@ const EventEmitter = require('events');
 
 class Client extends EventEmitter {
 
+    // http://192.168.1.175/device/getType?lang=en_us
+    static DEVICE_TYPE_STRING_INVERTER = 1;
+    static DEVICE_TYPE_RESIDENTIAL_INVERTER = 21;
+    static DEVICE_TYPE_RESIDENTIAL_ENERGY_STORAGE_INVERTER = 35;
+    static DEVICE_TYPE_METER = 18;
+
     constructor(ip) {
         super();
         this.ip = ip;
