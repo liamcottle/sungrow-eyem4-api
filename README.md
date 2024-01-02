@@ -12,6 +12,10 @@ npm install @liamcottle/sungrow-eyem4-api
 
 - [x] `connect`
 - [x] `disconnect`
+- [x] `getAbout`
+- [x] `getProduct`
+- [x] `getDeviceTypes`
+- [x] `getDeviceInfo(deviceId)`
 - [x] `authenticate`
 - [x] `getState`
 - [x] `getRuntime`
