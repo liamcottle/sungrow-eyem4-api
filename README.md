@@ -8,6 +8,20 @@ This is a NodeJS library for interacting with the websocket server running on th
 npm install @liamcottle/sungrow-eyem4-api
 ```
 
+## Features
+
+- [x] `connect`
+- [x] `disconnect`
+- [x] `authenticate`
+- [x] `getState`
+- [x] `getRuntime`
+- [x] `getStatistics`
+- [x] `getFaults`
+- [x] `getSystemInformation`
+- [x] `getDeviceList`
+- [x] `getDeviceRealtimeData`
+- [x] `getDeviceDCData`
+
 ## Example
 
 ```javascript
